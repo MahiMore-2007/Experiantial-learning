@@ -518,7 +518,6 @@ body {
   color: var(--dash-sub); margin-bottom: 6px;
 }
 
-/* ── DASH INPUTS ── */
 .dash-input,
 .dash-input.form-control,
 .dash-input.form-select {
@@ -540,7 +539,6 @@ body {
 }
 .dash-input::placeholder { color: var(--dash-muted) !important; }
 
-/* ── SEARCH GROUP ── */
 .dash-search-group {
   border: 1px solid var(--dash-border);
   border-radius: var(--radius-sm); overflow: hidden;
@@ -556,8 +554,6 @@ body {
 .dash-search-group .dash-input {
   border: none !important; border-radius: 0 !important; box-shadow: none !important;
 }
-
-/* ── DASH BUTTONS ── */
 .btn-add {
   font-family: var(--font-body); font-size: 13px; font-weight: 700;
   padding: 11px 20px; background: var(--amber); color: #0b0e1a;
@@ -592,7 +588,7 @@ body {
 }
 .btn-danger-sm:hover { background: #ff3333; transform: translateY(-1px); }
 
-/* ── FILTER GROUP ── */
+
 .dash-filter-group {
   border-radius: var(--radius-sm); overflow: hidden;
   border: 1px solid var(--dash-border);
@@ -607,7 +603,6 @@ body {
 .dash-filter-btn:hover { background: var(--bg-card-hover); color: var(--dash-text); }
 .dash-filter-btn.active { background: var(--amber-glow); color: var(--amber); font-weight: 700; }
 
-/* ── PROGRESS ── */
 .dash-progress {
   height: 6px; background: var(--bg-input);
   border-radius: 10px; overflow: hidden;
@@ -616,8 +611,6 @@ body {
   background: linear-gradient(90deg, var(--amber), var(--mint));
   border-radius: 10px; transition: width 0.5s ease;
 }
-
-/* ── SUMMARY GRID ── */
 .sum-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
   margin-top: 14px;
@@ -647,8 +640,6 @@ body {
   letter-spacing: 1px; text-transform: uppercase;
   color: var(--dash-muted); margin-top: 3px;
 }
-
-/* ── TASK COUNT PILL ── */
 .task-count-pill {
   font-size: 10.5px; font-weight: 600; letter-spacing: 1px;
   text-transform: uppercase; color: var(--dash-muted);
@@ -662,7 +653,6 @@ body {
   padding: 60px 20px; color: var(--dash-muted); text-align: center;
 }
 
-/* ── TASK CARDS ── */
 #taskList { display: flex; flex-direction: column; gap: 12px; }
 
 .task-card {
@@ -696,7 +686,6 @@ body {
 .task-foot { border-top: 1px solid var(--dash-border); padding-top: 10px; }
 .task-due  { font-size: 11.5px; color: var(--dash-muted); }
 
-/* ── PRIORITY & DONE BADGES ── */
 .pri-badge {
   font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
   text-transform: uppercase; padding: 3px 10px; border-radius: 100px;
@@ -712,8 +701,6 @@ body {
   display: inline-block; background: var(--mint-glow); color: var(--mint);
   border: 1px solid rgba(61,214,140,0.3);
 }
-
-/* ── MINI CONTROLS ── */
 .mini-sel {
   background: var(--bg-input); border: 1px solid var(--dash-border);
   border-radius: var(--radius-sm); color: var(--dash-sub);
@@ -750,15 +737,11 @@ body {
 .custom-cb input:checked ~ .cb-mark { background: var(--mint); border-color: var(--mint); }
 .custom-cb input:checked ~ .cb-mark::after { border-color: #0b0e1a; }
 .custom-cb:hover .cb-mark { border-color: var(--amber); }
-
-/* ── MODAL ── */
 .tf-modal {
   background: var(--bg-panel); border: 1px solid var(--dash-border);
   border-radius: var(--radius-lg); color: var(--dash-text);
 }
 .tf-modal .modal-title { color: var(--dash-text); }
-
-/* ── TOAST ── */
 .toast {
   background: var(--bg-panel) !important;
   border: 1px solid var(--dash-border) !important;
@@ -776,22 +759,16 @@ body {
 }
 .animate-in { animation: slideUp 0.35s ease both; }
 .shake { animation: shake 0.4s ease; }
-
-/* ── DASHBOARD FOOTER ── */
 .dash-footer {
   position: relative; z-index: 5; text-align: center;
   padding: 20px; color: var(--dash-muted);
   font-size: 11.5px; letter-spacing: 0.5px;
   border-top: 1px solid var(--dash-border); margin-top: 10px;
 }
-
-/* ── SCROLLBAR ── */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--indigo); }
-
-/* ── RESPONSIVE ── */
 @media (max-width: 991px) {
   .hero-section { padding: 60px 0 50px; }
   .hero-float-card { display: none; }
@@ -813,33 +790,24 @@ body {
   background:#f4f7ff;
   color:#1e293b;
 }
-
-/* LIGHT BACKGROUND EFFECTS */
 .bg-grid{
   background-image:
     linear-gradient(rgba(79,70,229,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(79,70,229,0.04) 1px, transparent 1px);
 }
-
 .bg-glow{
   background:radial-gradient(circle, rgba(79,70,229,0.08), transparent 70%);
 }
-
-/* NAVBAR */
 .dash-navbar{
   background:rgba(255,255,255,0.92)!important;
   border-bottom:1px solid rgba(79,70,229,0.12);
   backdrop-filter:blur(14px);
 }
-
-/* DASH CARDS */
 .dash-card{
   background:#ffffff;
   border:1px solid rgba(79,70,229,0.12);
   box-shadow:0 10px 35px rgba(79,70,229,0.08);
 }
-
-/* TEXT */
 .dash-card-title,
 .task-title,
 .tf-modal .modal-title{
@@ -851,8 +819,6 @@ body {
 .sum-lbl{
   color:#64748b;
 }
-
-/* INPUTS */
 .dash-input,
 .dash-input.form-control,
 .dash-input.form-select{
@@ -860,11 +826,9 @@ body {
   border:1px solid rgba(79,70,229,0.14)!important;
   color:#1e293b!important;
 }
-
 .dash-input::placeholder{
   color:#94a3b8!important;
 }
-
 .dash-input:focus,
 .dash-input.form-control:focus,
 .dash-input.form-select:focus{
@@ -875,23 +839,18 @@ body {
   border:1px solid rgba(79,70,229,0.14);
   background:#f8faff;
 }
-
 .dash-search-icon{
   background:#f8faff;
   color:#64748b;
 }
-
-/* BUTTONS */
 .btn-add{
   background:#4f46e5;
   color:white;
 }
-
 .btn-add:hover{
   background:#635bff;
   box-shadow:0 8px 20px rgba(79,70,229,0.25);
 }
-
 .btn-ghost-dash,
 .btn-mini,
 .btn-back{
@@ -899,29 +858,23 @@ body {
   color:#475569;
   border:1px solid rgba(79,70,229,0.12);
 }
-
 .btn-ghost-dash:hover,
 .btn-mini:hover,
 .btn-back:hover{
   border-color:#4f46e5;
   color:#4f46e5;
 }
-
-/* FILTER BUTTONS */
 .dash-filter-group{
   border:1px solid rgba(79,70,229,0.12);
 }
-
 .dash-filter-btn{
   background:#ffffff;
   color:#64748b;
 }
-
 .dash-filter-btn:hover{
   background:#eef2ff;
   color:#4f46e5;
 }
-
 .dash-filter-btn.active{
   background:#4f46e5;
   color:white;
@@ -930,35 +883,26 @@ body {
   background:#ffffff;
   border:1px solid rgba(79,70,229,0.12);
 }
-
 .sum-item:hover{
   transform:translateY(-2px);
 }
-
-/* TASK CARDS */
 .task-card{
   background:#ffffff;
   border:1px solid rgba(79,70,229,0.12);
   box-shadow:0 4px 18px rgba(79,70,229,0.05);
 }
-
 .task-card:hover{
   background:#ffffff;
   box-shadow:0 10px 25px rgba(79,70,229,0.12);
 }
-
 .task-card.completed{
   opacity:0.75;
 }
-
-/* MINI SELECT */
 .mini-sel{
   background:#f8faff;
   border:1px solid rgba(79,70,229,0.12);
   color:#475569;
 }
-
-/* CHECKBOX */
 .cb-mark{
   border:2px solid #94a3b8;
   background:white;
@@ -966,29 +910,39 @@ body {
 .custom-cb:hover .cb-mark{
   border-color:#4f46e5;
 }
-
 .custom-cb input:checked ~ .cb-mark{
   background:#4f46e5;
   border-color:#4f46e5;
 }
-
 .custom-cb input:checked ~ .cb-mark::after{
   border-color:white;
 }
-
-/* PROGRESS BAR */
 .dash-progress{
   background:#e2e8f0;
 }
-
 .dash-progress-bar{
   background:linear-gradient(90deg,#4f46e5,#7c3aed);
 }
-
-/* TASK COUNT */
 .task-count-pill,
 .dash-stat-pill{
   background:#ffffff;
   border:1px solid rgba(79,70,229,0.12);
   color:#475569;
+}
+.dash-empty{
+  color:#64748b;
+}
+.tf-modal{
+  background:#ffffff;
+  border:1px solid rgba(79,70,229,0.12);
+  color:#1e293b;
+}
+.toast{
+  background:#ffffff!important;
+  border:1px solid rgba(79,70,229,0.14)!important;
+  color:#1e293b!important;
+}
+.dash-footer{
+  color:#64748b;
+  border-top:1px solid rgba(79,70,229,0.12);
 }
