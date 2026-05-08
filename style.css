@@ -9,3 +9,19 @@
   --land-border:   rgba(79, 70, 229, 0.1);
   --land-text:     #1e1e2e;
   --land-sub:      #5a5a7a;
+ /* Dashboard colors */
+  --bg-base:       #0b0e1a;
+  --bg-panel:      #111527;
+  --bg-card:       #161b30;
+  --bg-card-hover: #1b2038;
+  --bg-input:      #0e1120;
+  --amber:         #f5a623;
+  --amber-glow:    rgba(245, 166, 35, 0.15);
+  --mint:          #3dd68c;
+  --mint-glow:     rgba(61, 214, 140, 0.12);
+  --red:           #ff5757;
+  --red-glow:      rgba(255, 87, 87, 0.12);
+  --dash-text:     #eef0f8;
+  --dash-sub:      #8b91b0;
+  --dash-muted:    #4a5070;
+  --dash-border:   rgba(255, 255, 255, 0.07);
