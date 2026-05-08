@@ -546,3 +546,32 @@ body {
   border-radius: var(--radius-sm); overflow: hidden;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
+.dash-search-group:focus-within {
+  border-color: var(--amber); box-shadow: 0 0 0 3px var(--amber-glow);
+}
+.dash-search-icon {
+  background: var(--bg-input); border: none;
+  color: var(--dash-muted); padding: 0 12px; font-size: 13px;
+}
+.dash-search-group .dash-input {
+  border: none !important; border-radius: 0 !important; box-shadow: none !important;
+}
+
+/* ── DASH BUTTONS ── */
+.btn-add {
+  font-family: var(--font-body); font-size: 13px; font-weight: 700;
+  padding: 11px 20px; background: var(--amber); color: #0b0e1a;
+  border: none; border-radius: var(--radius-sm); cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-add:hover {
+  background: #ffc04a; transform: translateY(-1px);
+  box-shadow: 0 5px 18px rgba(245,166,35,0.35);
+}
+.btn-ghost-dash {
+  font-family: var(--font-body); font-size: 13px;
+  padding: 11px 16px; background: transparent;
+  color: var(--dash-sub); border: 1px solid var(--dash-border);
+  border-radius: var(--radius-sm); cursor: pointer;
+  transition: all var(--transition);
+}
