@@ -131,3 +131,35 @@ body {
   border-radius: 2px;
   transition: width var(--transition);
 }
+.nav-lnk:hover { color: var(--indigo); }
+.nav-lnk:hover::after { width: 100%; }
+
+.btn-nav-ghost {
+  background: none; border: 1px solid var(--land-border);
+  border-radius: var(--radius-sm); padding: 8px 18px;
+  font-family: var(--font-body); font-size: 13px;
+  font-weight: 500; color: var(--land-text); cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-nav-ghost:hover { border-color: var(--indigo); color: var(--indigo); }
+.btn-nav-solid {
+  background: var(--indigo); color: white;
+  border: none; border-radius: var(--radius-sm);
+  padding: 9px 20px; font-family: var(--font-body);
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-nav-solid:hover {
+  background: var(--indigo-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(79,70,229,0.3);
+}
+
+/* ── MOBILE MENU ── */
+.mob-lnk {
+  display: block; padding: 10px 0;
+  text-decoration: none; color: var(--land-sub);
+  font-weight: 500; border-bottom: 1px solid var(--land-border);
+  transition: color var(--transition);
+}
+.mob-lnk:hover { color: var(--indigo); }
