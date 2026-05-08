@@ -115,3 +115,19 @@ body {
   border-radius: 4px; padding: 2px 6px;
   align-self: flex-end; margin-bottom: 4px;
 }
+.nav-lnk {
+  text-decoration: none;
+  color: var(--land-sub);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color var(--transition);
+  position: relative;
+}
+.nav-lnk::after {
+  content: '';
+  position: absolute; bottom: -3px; left: 0;
+  width: 0; height: 2px;
+  background: var(--indigo);
+  border-radius: 2px;
+  transition: width var(--transition);
+}
