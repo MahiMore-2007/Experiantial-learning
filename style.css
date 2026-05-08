@@ -61,3 +61,15 @@ body {
   color: var(--land-text);
   position: relative;
 }
+.land-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.land-blob-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(79,70,229,0.09), transparent 70%);
+  top: -100px; left: -150px;
+}
