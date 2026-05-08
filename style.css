@@ -685,3 +685,51 @@ body {
   font-size: 14px; font-weight: 600;
   color: var(--dash-text); margin-bottom: 3px; line-height: 1.4;
 }
+.task-title.struck,
+.task-desc.struck {
+  text-decoration: line-through; color: var(--dash-muted);
+}
+.task-desc {
+  font-size: 12px; color: var(--dash-sub);
+  font-weight: 300; line-height: 1.5; margin: 0;
+}
+.task-foot { border-top: 1px solid var(--dash-border); padding-top: 10px; }
+.task-due  { font-size: 11.5px; color: var(--dash-muted); }
+
+/* ── PRIORITY & DONE BADGES ── */
+.pri-badge {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 100px;
+  display: inline-block;
+}
+.pri-badge.high   { background: var(--red-glow);   color: var(--red);   border: 1px solid rgba(255,87,87,0.3); }
+.pri-badge.medium { background: var(--amber-glow); color: var(--amber); border: 1px solid rgba(245,166,35,0.3); }
+.pri-badge.low    { background: var(--mint-glow);  color: var(--mint);  border: 1px solid rgba(61,214,140,0.3); }
+
+.done-badge {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 100px;
+  display: inline-block; background: var(--mint-glow); color: var(--mint);
+  border: 1px solid rgba(61,214,140,0.3);
+}
+
+/* ── MINI CONTROLS ── */
+.mini-sel {
+  background: var(--bg-input); border: 1px solid var(--dash-border);
+  border-radius: var(--radius-sm); color: var(--dash-sub);
+  font-family: var(--font-body); font-size: 11px;
+  padding: 5px 9px; cursor: pointer; outline: none;
+  transition: border-color var(--transition);
+}
+.mini-sel:focus { border-color: var(--amber); }
+
+.btn-mini {
+  font-family: var(--font-body); font-size: 11px; font-weight: 600;
+  padding: 5px 11px; border-radius: var(--radius-sm);
+  border: 1px solid var(--dash-border); cursor: pointer;
+  background: var(--bg-input); color: var(--dash-sub);
+  transition: all var(--transition);
+}
+.btn-mini:hover { border-color: var(--amber); color: var(--amber); }
+.btn-mini.danger { border-color: rgba(255,87,87,0.25); color: var(--red); }
+.btn-mini.danger:hover { background: var(--red-glow); border-color: var(--red); }
