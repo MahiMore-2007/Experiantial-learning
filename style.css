@@ -963,3 +963,32 @@ body {
   border:2px solid #94a3b8;
   background:white;
 }
+.custom-cb:hover .cb-mark{
+  border-color:#4f46e5;
+}
+
+.custom-cb input:checked ~ .cb-mark{
+  background:#4f46e5;
+  border-color:#4f46e5;
+}
+
+.custom-cb input:checked ~ .cb-mark::after{
+  border-color:white;
+}
+
+/* PROGRESS BAR */
+.dash-progress{
+  background:#e2e8f0;
+}
+
+.dash-progress-bar{
+  background:linear-gradient(90deg,#4f46e5,#7c3aed);
+}
+
+/* TASK COUNT */
+.task-count-pill,
+.dash-stat-pill{
+  background:#ffffff;
+  border:1px solid rgba(79,70,229,0.12);
+  color:#475569;
+}
