@@ -109,3 +109,9 @@ body {
   line-height: 1;
 }
 #dashboardPage .brand-name { color: var(--dash-text); }
+.brand-pro {
+  font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+  color: white; background: var(--indigo);
+  border-radius: 4px; padding: 2px 6px;
+  align-self: flex-end; margin-bottom: 4px;
+}
