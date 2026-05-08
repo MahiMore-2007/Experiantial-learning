@@ -229,3 +229,21 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 22px rgba(79,70,229,0.35);
 }
+.btn-hero-ghost {
+  background: none; color: var(--land-text);
+  border: 1px solid rgba(79,70,229,0.25);
+  border-radius: var(--radius-sm);
+  padding: 13px 24px; font-family: var(--font-body);
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-hero-ghost:hover { border-color: var(--indigo); color: var(--indigo); }
+
+.hero-stats { margin-top: 36px; }
+.hstat { display: flex; flex-direction: column; }
+.hstat-num {
+  font-family: var(--font-display); font-size: 28px;
+  color: var(--indigo); line-height: 1;
+}
+.hstat-lbl { font-size: 11px; color: var(--land-sub); letter-spacing: 0.5px; }
+.hstat-div { width: 1px; background: var(--land-border); align-self: stretch; }
