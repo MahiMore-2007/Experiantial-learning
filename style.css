@@ -798,3 +798,50 @@ body {
   .features-section, .preview-section { padding: 60px 0; }
   .cta-section { padding: 70px 20px; }
 }
+@media (max-width: 768px) {
+  .dash-card { padding: 18px 16px; }
+  .sum-grid { grid-template-columns: repeat(2, 1fr); }
+  .task-card { padding: 13px 14px 11px; }
+  .section-sub { max-width: 100%; }
+}
+@media (max-width: 480px) {
+  .brand-name { font-size: 24px; }
+  .sum-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero-title { font-size: 38px; }
+}
+#dashboardPage{
+  background:#f4f7ff;
+  color:#1e293b;
+}
+
+/* LIGHT BACKGROUND EFFECTS */
+.bg-grid{
+  background-image:
+    linear-gradient(rgba(79,70,229,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,70,229,0.04) 1px, transparent 1px);
+}
+
+.bg-glow{
+  background:radial-gradient(circle, rgba(79,70,229,0.08), transparent 70%);
+}
+
+/* NAVBAR */
+.dash-navbar{
+  background:rgba(255,255,255,0.92)!important;
+  border-bottom:1px solid rgba(79,70,229,0.12);
+  backdrop-filter:blur(14px);
+}
+
+/* DASH CARDS */
+.dash-card{
+  background:#ffffff;
+  border:1px solid rgba(79,70,229,0.12);
+  box-shadow:0 10px 35px rgba(79,70,229,0.08);
+}
+
+/* TEXT */
+.dash-card-title,
+.task-title,
+.tf-modal .modal-title{
+  color:#1e293b;
+}
