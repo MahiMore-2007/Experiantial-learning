@@ -845,3 +845,84 @@ body {
 .tf-modal .modal-title{
   color:#1e293b;
 }
+.dash-label,
+.task-desc,
+.task-due,
+.sum-lbl{
+  color:#64748b;
+}
+
+/* INPUTS */
+.dash-input,
+.dash-input.form-control,
+.dash-input.form-select{
+  background:#f8faff!important;
+  border:1px solid rgba(79,70,229,0.14)!important;
+  color:#1e293b!important;
+}
+
+.dash-input::placeholder{
+  color:#94a3b8!important;
+}
+
+.dash-input:focus,
+.dash-input.form-control:focus,
+.dash-input.form-select:focus{
+  border-color:#4f46e5!important;
+  box-shadow:0 0 0 3px rgba(79,70,229,0.12)!important;
+}
+ .dash-search-group{
+  border:1px solid rgba(79,70,229,0.14);
+  background:#f8faff;
+}
+
+.dash-search-icon{
+  background:#f8faff;
+  color:#64748b;
+}
+
+/* BUTTONS */
+.btn-add{
+  background:#4f46e5;
+  color:white;
+}
+
+.btn-add:hover{
+  background:#635bff;
+  box-shadow:0 8px 20px rgba(79,70,229,0.25);
+}
+
+.btn-ghost-dash,
+.btn-mini,
+.btn-back{
+  background:#ffffff;
+  color:#475569;
+  border:1px solid rgba(79,70,229,0.12);
+}
+
+.btn-ghost-dash:hover,
+.btn-mini:hover,
+.btn-back:hover{
+  border-color:#4f46e5;
+  color:#4f46e5;
+}
+
+/* FILTER BUTTONS */
+.dash-filter-group{
+  border:1px solid rgba(79,70,229,0.12);
+}
+
+.dash-filter-btn{
+  background:#ffffff;
+  color:#64748b;
+}
+
+.dash-filter-btn:hover{
+  background:#eef2ff;
+  color:#4f46e5;
+}
+
+.dash-filter-btn.active{
+  background:#4f46e5;
+  color:white;
+}
