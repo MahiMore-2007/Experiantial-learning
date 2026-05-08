@@ -101,3 +101,11 @@ body {
 }
 .brand-icon.small { font-size: 15px; }
 @keyframes spin-slow { to { transform: rotate(360deg); } }
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: var(--land-text);
+  line-height: 1;
+}
+#dashboardPage .brand-name { color: var(--dash-text); }
