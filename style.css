@@ -497,4 +497,52 @@ body {
   padding: 24px 26px;
   box-shadow: 0 6px 30px rgba(0,0,0,0.4);
   animation: slideUp 0.4s ease both;
-  
+  }
+@keyframes slideUp {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.dash-card-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 4px;
+}
+.dash-card-title {
+  font-family: var(--font-display);
+  font-size: 30px; letter-spacing: 2px;
+  color: var(--dash-text); margin-bottom: 20px; line-height: 1;
+}
+.dash-label {
+  display: block; font-size: 10.5px; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--dash-sub); margin-bottom: 6px;
+}
+
+/* ── DASH INPUTS ── */
+.dash-input,
+.dash-input.form-control,
+.dash-input.form-select {
+  background-color: var(--bg-input) !important;
+  border: 1px solid var(--dash-border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--dash-text) !important;
+  font-family: var(--font-body) !important;
+  font-size: 13px !important;
+  padding: 10px 13px !important;
+  transition: border-color var(--transition), box-shadow var(--transition) !important;
+}
+.dash-input:focus,
+.dash-input.form-control:focus,
+.dash-input.form-select:focus {
+  border-color: var(--amber) !important;
+  box-shadow: 0 0 0 3px var(--amber-glow) !important;
+  outline: none !important;
+}
+.dash-input::placeholder { color: var(--dash-muted) !important; }
+
+/* ── SEARCH GROUP ── */
+.dash-search-group {
+  border: 1px solid var(--dash-border);
+  border-radius: var(--radius-sm); overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
