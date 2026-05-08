@@ -92,3 +92,12 @@ body {
   border-bottom: 1px solid var(--land-border);
   z-index: 200;
 }
+.brand { text-decoration: none; }
+.brand-icon {
+  font-size: 20px;
+  color: var(--indigo);
+  display: inline-block;
+  animation: spin-slow 9s linear infinite;
+}
+.brand-icon.small { font-size: 15px; }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
