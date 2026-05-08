@@ -189,3 +189,43 @@ body {
   border-radius: 100px; padding: 5px 14px;
   margin-bottom: 20px;
 }
+.eyebrow-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--indigo);
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.6; }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6vw, 68px);
+  letter-spacing: 2px; line-height: 1.05;
+  color: var(--land-text); margin-bottom: 18px;
+}
+.title-accent { color: var(--indigo); }
+.hero-emoji { display: inline-block; animation: bounce 2s infinite; }
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.hero-sub {
+  font-size: 16px; font-weight: 300; line-height: 1.7;
+  color: var(--land-sub); margin-bottom: 28px; max-width: 460px;
+}
+
+.btn-hero-primary {
+  background: var(--indigo); color: white;
+  border: none; border-radius: var(--radius-sm);
+  padding: 13px 28px; font-family: var(--font-body);
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-hero-primary:hover {
+  background: var(--indigo-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(79,70,229,0.35);
+}
