@@ -575,3 +575,84 @@ body {
   border-radius: var(--radius-sm); cursor: pointer;
   transition: all var(--transition);
 }
+.btn-ghost-dash:hover { border-color: var(--dash-sub); color: var(--dash-text); }
+.btn-ghost-sm {
+  font-family: var(--font-body); font-size: 12px; font-weight: 500;
+  padding: 7px 16px; background: transparent; color: var(--dash-sub);
+  border: 1px solid var(--dash-border); border-radius: var(--radius-sm); cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-ghost-sm:hover { color: var(--dash-text); border-color: var(--dash-sub); }
+
+.btn-danger-sm {
+  font-family: var(--font-body); font-size: 12px; font-weight: 600;
+  padding: 7px 16px; background: var(--red); color: white;
+  border: none; border-radius: var(--radius-sm); cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-danger-sm:hover { background: #ff3333; transform: translateY(-1px); }
+
+/* ── FILTER GROUP ── */
+.dash-filter-group {
+  border-radius: var(--radius-sm); overflow: hidden;
+  border: 1px solid var(--dash-border);
+}
+.dash-filter-btn {
+  background: var(--bg-input); color: var(--dash-sub);
+  font-family: var(--font-body); font-size: 11.5px; font-weight: 500;
+  border: none; border-right: 1px solid var(--dash-border);
+  flex: 1; padding: 8px 4px; transition: all var(--transition);
+}
+.dash-filter-btn:last-child { border-right: none; }
+.dash-filter-btn:hover { background: var(--bg-card-hover); color: var(--dash-text); }
+.dash-filter-btn.active { background: var(--amber-glow); color: var(--amber); font-weight: 700; }
+
+/* ── PROGRESS ── */
+.dash-progress {
+  height: 6px; background: var(--bg-input);
+  border-radius: 10px; overflow: hidden;
+}
+.dash-progress-bar {
+  background: linear-gradient(90deg, var(--amber), var(--mint));
+  border-radius: 10px; transition: width 0.5s ease;
+}
+
+/* ── SUMMARY GRID ── */
+.sum-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  margin-top: 14px;
+}
+.sum-item {
+  background: var(--bg-card); border: 1px solid var(--dash-border);
+  border-radius: var(--radius-sm); padding: 12px 8px; text-align: center;
+  transition: transform var(--transition);
+}
+.sum-item:hover { transform: translateY(-2px); }
+.sum-item.amber  { border-color: rgba(245,166,35,0.3); background: var(--amber-glow); }
+.sum-item.green  { border-color: rgba(61,214,140,0.3); background: var(--mint-glow); }
+.sum-item.red    { border-color: rgba(255,87,87,0.3);  background: var(--red-glow); }
+.sum-item.amber2 { border-color: rgba(245,166,35,0.2); background: rgba(245,166,35,0.06); }
+.sum-item.muted  { border-color: var(--dash-border); }
+.sum-num {
+  display: block; font-family: var(--font-display);
+  font-size: 26px; line-height: 1; color: var(--dash-text);
+}
+.sum-item.amber  .sum-num { color: var(--amber); }
+.sum-item.green  .sum-num { color: var(--mint); }
+.sum-item.red    .sum-num { color: var(--red); }
+.sum-item.amber2 .sum-num { color: var(--amber); }
+.sum-item.muted  .sum-num { color: var(--dash-muted); }
+.sum-lbl {
+  display: block; font-size: 9px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--dash-muted); margin-top: 3px;
+}
+
+/* ── TASK COUNT PILL ── */
+.task-count-pill {
+  font-size: 10.5px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--dash-muted);
+  background: var(--bg-card); border: 1px solid var(--dash-border);
+  border-radius: 100px; padding: 5px 14px;
+}
+.text-amber { color: var(--amber) !important; }
