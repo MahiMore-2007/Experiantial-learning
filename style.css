@@ -30,3 +30,9 @@
   --radius-lg:     20px;
   --transition:    0.22s ease;
 }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
