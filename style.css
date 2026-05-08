@@ -428,3 +428,30 @@ body {
   text-decoration: none; transition: color var(--transition);
 }
 .footer-link:hover { color: var(--indigo); }
+#dashboardPage {
+  background-color: var(--bg-base);
+  color: var(--dash-text);
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg-grid {
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(245,166,35,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,166,35,0.025) 1px, transparent 1px);
+  background-size: 52px 52px;
+  pointer-events: none; z-index: 0;
+}
+.bg-glow {
+  position: fixed; top: -200px; right: -200px;
+  width: 650px; height: 650px;
+  background: radial-gradient(circle, rgba(245,166,35,0.06), transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+.dash-navbar {
+  background: rgba(17,21,39,0.96) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--dash-border);
+  z-index: 100;
+}
