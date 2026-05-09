@@ -1,1 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartTask Pro — Organize. Focus. Achieve.</title>
 
+  <!-- Fonts -->
+  
+</head>
+<body>
+
+<!-- ░░ CURSOR GLOW ░░ -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ░░ TOAST ░░ -->
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index:9999;">
+  <div id="liveToast" class="toast align-items-center border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body" id="toastMsg">Done!</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+<!-- ░░ DELETE MODAL ░░ -->
+<div class="modal fade" id="deleteModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content tf-modal">
+      <div class="modal-header border-0">
+        <h5 class="modal-title"><i class="bi bi-exclamation-triangle me-2 text-amber"></i>Delete Task</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-secondary mb-0">Delete <strong id="deleteTaskName" class="text-white"></strong>? This cannot be undone.</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-ghost-sm" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-danger-sm" id="confirmDeleteBtn"><i class="bi bi-trash3 me-1"></i>Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 1: LANDING PAGE
+══════════════════════════════════════════ -->
+<div id="landingPage">
+
+  <!-- BG DECORATIONS (light) -->
+  <div class="land-blob land-blob-1"></div>
+  <div class="land-blob land-blob-2"></div>
+  <div class="land-dots"></div>
+
+  <!-- NAVBAR -->
+  <header class="land-navbar sticky-top">
+    <div class="container-fluid px-4 px-lg-5">
+      <div class="d-flex align-items-center justify-content-between py-3 flex-wrap gap-3">
+
+        <div class="brand d-flex align-items-center gap-2">
+          <span class="brand-icon">✦</span>
+          <span class="brand-name">SmartTask</span>
+          <span class="brand-pro">PRO</span>
+        </div>
+
+        <nav class="land-nav d-none d-md-flex align-items-center gap-4">
+          <a href="#features" class="nav-lnk">Features</a>
+          <a href="#preview" class="nav-lnk">Preview</a>
+          <a href="#cta" class="nav-lnk">Pricing</a>
+          <button class="btn-nav-ghost">Login</button>
+          <button class="btn-nav-solid" onclick="launchDashboard()">Get Started</button>
+        </nav>
+
+        <button class="btn d-md-none p-1" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+          <i class="bi bi-list fs-4 text-indigo"></i>
+        </button>
+      </div>
+
+      <!-- Mobile nav -->
+      <div id="mobileMenu" class="mobile-menu d-none pb-3">
+        <a href="#features" class="mob-lnk" onclick="toggleMobileMenu()">Features</a>
+        <a href="#preview" class="mob-lnk" onclick="toggleMobileMenu()">Preview</a>
+        <a href="#cta" class="mob-lnk" onclick="toggleMobileMenu()">Pricing</a>
+        <button class="btn-nav-solid w-100 mt-2" onclick="launchDashboard()">Get Started Free</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="container-fluid px-4 px-lg-5">
+      <div class="row align-items-center gy-5">
+
+        <div class="col-12 col-lg-6 hero-left reveal">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span>Trusted by 10,000+ students & professionals</span>
+          </div>
+          <h1 class="hero-title">
+            Manage your tasks<br/>
+            <span class="title-accent">like a pro.</span> <span class="hero-emoji">🚀</span>
+          </h1>
+          <p class="hero-sub">SmartTask Pro helps you organize, track, and smash tasks efficiently — with a dashboard so clean, you'll actually want to open it.</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn-hero-primary" onclick="launchDashboard()">
+              <i class="bi bi-lightning-charge-fill me-2"></i>Start for Free
+            </button>
+            <button class="btn-hero-ghost" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+              <i class="bi bi-play-circle me-2"></i>See Features
+            </button>
+          </div>
+          <div class="hero-stats d-flex gap-4 mt-4 flex-wrap">
+            <div class="hstat"><span class="hstat-num">50K+</span><span class="hstat-lbl">Tasks Done</span></div>
+            <div class="hstat-div"></div>
+            <div class="hstat"><span class="hstat-num">4.9★</span><span class="hstat-lbl">User Rating</span></div>
+            <div class="hstat-div"></div>
+            <div class="hstat"><span class="hstat-num">100%</span><span class="hstat-lbl">Free to Use</span></div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 text-center reveal" style="animation-delay:0.15s;">
+          <div class="hero-img-wrap">
+            <img src="https://www.zohowebstatic.com/sites/zweb/images/projects/features/tasks-banner.png"
+                 alt="Task Dashboard" class="hero-img" />
+            <div class="hero-float-card hfc-1">
+              <i class="bi bi-check2-circle text-green me-2"></i>12 tasks completed today
+            </div>
+            <div class="hero-float-card hfc-2">
+              <i class="bi bi-fire text-amber me-2"></i>7-day streak 🔥
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="container-fluid px-4 px-lg-5">
+      <div class="text-center mb-5 reveal">
+        <div class="section-eyebrow">EVERYTHING YOU NEED</div>
+        <h2 class="section-title">Powerful Features</h2>
+        <p class="section-sub">Built for students, developers, and hustlers who actually want to get things done.</p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal" style="animation-delay:0.05s;">
+          <div class="feat-card">
+            <div class="feat-icon-wrap blue">
+              <i class="bi bi-list-check"></i>
+            </div>
+            <img src="https://i.pinimg.com/736x/4b/e4/ba/4be4ba842d6d45492a9da0cf471ced18.jpg" alt="Task Management" class="feat-img" />
+            <h3 class="feat-title">Task Management</h3>
+            <p class="feat-desc">Create, update and manage tasks in seconds with a clean, intuitive interface.</p>
+            <div class="feat-tag">Core</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal" style="animation-delay:0.1s;">
+          <div class="feat-card">
+            <div class="feat-icon-wrap indigo">
+              <i class="bi bi-calendar3"></i>
+            </div>
+            <img src="https://i.pinimg.com/1200x/96/fa/53/96fa53dd943ac08587f9cc84641b17d6.jpg" alt="Calendar" class="feat-img" />
+            <h3 class="feat-title">Calendar View</h3>
+            <p class="feat-desc">Visualize tasks by date with an interactive, color-coded calendar view.</p>
+            <div class="feat-tag">Planning</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal" style="animation-delay:0.15s;">
+          <div class="feat-card">
+            <div class="feat-icon-wrap amber">
+              <i class="bi bi-bar-chart-steps"></i>
+            </div>
+            <img src="https://i.pinimg.com/736x/ae/ba/7b/aeba7b19d8c597ac0b8920e475dad7fb.jpg" alt="Priority" class="feat-img" />
+            <h3 class="feat-title">Priority Levels</h3>
+            <p class="feat-desc">Mark tasks as High, Medium, or Low priority so you always focus on what matters.</p>
+            <div class="feat-tag">Productivity</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal" style="animation-delay:0.2s;">
+          <div class="feat-card">
+            <div class="feat-icon-wrap green">
+              <i class="bi bi-speedometer2"></i>
+            </div>
+            <img src="https://i.pinimg.com/1200x/63/db/c9/63dbc96387fc733bd6bbf1148c050e8d.jpg" alt="Dashboard" class="feat-img" />
+            <h3 class="feat-title">Live Dashboard</h3>
+            <p class="feat-desc">Track your productivity with real-time stats, streaks, and a live progress bar.</p>
+            <div class="feat-tag">Analytics</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PREVIEW SECTION -->
+  <section class="preview-section" id="preview">
+    <div class="container-fluid px-4 px-lg-5">
+      <div class="row align-items-center gy-5">
+
+        <div class="col-12 col-lg-6 reveal">
+          <div class="preview-img-wrap">
+            <img src="https://i.pinimg.com/1200x/e5/ed/ae/e5edae64479e3d9dc9b7cd69fb5218c7.jpg"
+                 alt="Preview" class="preview-img" />
+            <div class="preview-overlay-badge">
+              <i class="bi bi-shield-check me-2"></i>100% Secure & Private
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 reveal" style="animation-delay:0.12s;">
+          <div class="section-eyebrow">WHY SMARTTASK</div>
+          <h2 class="section-title">Stay organized<br/>and focused.</h2>
+          <p class="section-sub mb-4">With SmartTask Pro, you always know what to do next. Plan your work, meet deadlines, and achieve your goals faster than ever before.</p>
+
+          <div class="check-list">
+            <div class="check-item"><i class="bi bi-check-circle-fill text-indigo me-3"></i>Real-time task completion tracking</div>
+            <div class="check-item"><i class="bi bi-check-circle-fill text-indigo me-3"></i>Priority-based smart sorting</div>
+            <div class="check-item"><i class="bi bi-check-circle-fill text-indigo me-3"></i>Instant search & filter</div>
+            <div class="check-item"><i class="bi bi-check-circle-fill text-indigo me-3"></i>Works completely offline</div>
+          </div>
+
+          <button class="btn-hero-primary mt-4" onclick="launchDashboard()">
+            Try It Now — It's Free <i class="bi bi-arrow-right ms-2"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="cta">
+    <div class="cta-inner text-center reveal">
+      <div class="cta-glow"></div>
+      <div class="section-eyebrow light">GET STARTED TODAY</div>
+      <h2 class="cta-title">Start managing your<br/>tasks <span class="title-accent">right now.</span></h2>
+      <p class="cta-sub">No signup needed. No credit card. Just open and get things done.</p>
+      <button class="btn-cta" onclick="launchDashboard()">
+        <i class="bi bi-lightning-charge-fill me-2"></i>Launch Dashboard Free
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="land-footer">
+    <div class="container-fluid px-4 px-lg-5">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+        <div class="d-flex align-items-center gap-2">
+          <span class="brand-icon small">✦</span>
+          <span class="footer-brand">SmartTask Pro</span>
+        </div>
+        <p class="footer-copy mb-0">© 2026 SmartTask Pro — Designed with ❤️ for your productivity</p>
+        <div class="d-flex gap-3">
+          <a href="#" class="footer-link">Privacy</a>
+          <a href="#" class="footer-link">Terms</a>
+          <a href="#" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /landingPage -->
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 2: DASHBOARD (hidden initially)
+══════════════════════════════════════════ -->
+<div id="dashboardPage" class="d-none">
+
+  <!-- BG DECORATIONS (dark) -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <!-- DASH NAVBAR -->
+  <nav class="dash-navbar sticky-top">
+    <div class="container-fluid px-4">
+      <div class="d-flex align-items-center justify-content-between py-3 flex-wrap gap-3">
+
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn-back" onclick="goLanding()" title="Back to Home">
+            <i class="bi bi-arrow-left me-1"></i> Home
+          </button>
+          <div class="brand d-flex align-items-center gap-2">
+            <span class="brand-icon">✦</span>
+            <span class="brand-name">SmartTask</span>
+            <span class="brand-pro">PRO</span>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <span class="dash-stat-pill"><i class="bi bi-list-check me-1"></i><span id="navTotal">0</span> Total</span>
+          <span class="dash-stat-pill amber"><i class="bi bi-clock me-1"></i><span id="navPending">0</span> Pending</span>
+          <span class="dash-stat-pill green"><i class="bi bi-check-circle me-1"></i><span id="navDone">0</span> Done</span>
+          <button class="btn-clear-all" id="clearAllBtn"><i class="bi bi-trash3 me-1"></i>Clear All</button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- DASH MAIN -->
+  <main class="container-fluid px-4 py-4 dash-main">
+    <div class="row g-4">
+
+      <!-- LEFT -->
+      <div class="col-12 col-xl-4">
+
+        <!-- ADD TASK -->
+        <div class="dash-card mb-4">
+          <div class="dash-card-label">NEW TASK</div>
+          <h2 class="dash-card-title">Add a Task</h2>
+
+          <div class="mb-3">
+            <label class="dash-label">Task Title</label>
+            <input type="text" id="taskTitle" class="dash-input form-control" placeholder="What needs to be done?" maxlength="100" />
+          </div>
+          <div class="mb-3">
+            <label class="dash-label">Description</label>
+            <textarea id="taskDesc" class="dash-input form-control" rows="2" placeholder="Details (optional)..."></textarea>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="dash-label">Priority</label>
+              <select id="taskPriority" class="dash-input form-select">
+                <option value="High">△ High</option>
+                <option value="Medium" selected>▷ Medium</option>
+                <option value="Low">▽ Low</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label class="dash-label">Due Date</label>
+              <input type="date" id="taskDue" class="dash-input form-control" />
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn-add flex-grow-1" id="addTaskBtn">
+              <i class="bi bi-plus-lg me-1"></i> Add Task
+            </button>
+            <button class="btn-ghost-dash" id="clearFormBtn"><i class="bi bi-x-lg"></i></button>
+          </div>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="dash-card mb-4">
+          <div class="dash-card-label">FILTER & SEARCH</div>
+          <h2 class="dash-card-title" style="font-size:24px;margin-bottom:16px;">Filter Tasks</h2>
+
+          <label class="dash-label">Status</label>
+          <div class="btn-group w-100 dash-filter-group mb-3" id="statusFilter">
+            <button class="btn dash-filter-btn active" data-value="all">All</button>
+            <button class="btn dash-filter-btn" data-value="Pending"><i class="bi bi-clock me-1"></i>Pending</button>
+            <button class="btn dash-filter-btn" data-value="Done"><i class="bi bi-check2 me-1"></i>Done</button>
+          </div>
+
+          <label class="dash-label">Priority</label>
+          <div class="btn-group w-100 dash-filter-group mb-3" id="priorityFilter">
+            <button class="btn dash-filter-btn active" data-value="all">All</button>
+            <button class="btn dash-filter-btn" data-value="High">△ High</button>
+            <button class="btn dash-filter-btn" data-value="Medium">▷ Med</button>
+            <button class="btn dash-filter-btn" data-value="Low">▽ Low</button>
+          </div>
+
+          <label class="dash-label">Search</label>
+          <div class="input-group dash-search-group">
+            <span class="input-group-text dash-search-icon"><i class="bi bi-search"></i></span>
+            <input type="text" id="searchInput" class="dash-input form-control" placeholder="Search tasks..." />
+          </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="dash-card">
+          <div class="dash-card-label">OVERVIEW</div>
+          <h2 class="dash-card-title" style="font-size:24px;margin-bottom:16px;">Summary</h2>
+
+          <div class="d-flex justify-content-between mb-1">
+            <span class="dash-label mb-0">Completion</span>
+            <span class="dash-label mb-0 text-amber" id="progressPct">0%</span>
+          </div>
+          <div class="progress dash-progress mb-4">
+            <div class="progress-bar dash-progress-bar" id="progressBar" style="width:0%"></div>
+          </div>
+
+          <div class="sum-grid">
+            <div class="sum-item"><span class="sum-num" id="sumTotal">0</span><span class="sum-lbl">Total</span></div>
+            <div class="sum-item amber"><span class="sum-num" id="sumPending">0</span><span class="sum-lbl">Pending</span></div>
+            <div class="sum-item green"><span class="sum-num" id="sumDone">0</span><span class="sum-lbl">Done</span></div>
+            <div class="sum-item red"><span class="sum-num" id="sumHigh">0</span><span class="sum-lbl">High</span></div>
+            <div class="sum-item amber2"><span class="sum-num" id="sumMed">0</span><span class="sum-lbl">Medium</span></div>
+            <div class="sum-item muted"><span class="sum-num" id="sumLow">0</span><span class="sum-lbl">Low</span></div>
+          </div>
+        </div>
+
+      </div><!-- /left -->
+
+      <!-- RIGHT: TASK LIST -->
+      <div class="col-12 col-xl-8">
+        <div class="dash-card h-100">
+          <div class="d-flex align-items-end justify-content-between mb-4 flex-wrap gap-2">
+            <div>
+              <div class="dash-card-label">TASK LIST</div>
+              <h2 class="dash-card-title mb-0">My Tasks</h2>
+            </div>
+            <span class="task-count-pill" id="taskCountBadge">0 tasks</span>
+          </div>
+
+          <div id="emptyState" class="dash-empty d-none">
+            <i class="bi bi-clipboard2-check fs-1 mb-3"></i>
+            <p>No tasks found</p>
+            <small>Add a task or adjust your filters</small>
+          </div>
+
+          <div id="taskList"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="dash-footer">
+    <p>SmartTask Pro — Dashboard &nbsp;|&nbsp; Level 3: Bootstrap + JS + External CSS &nbsp;✦</p>
+  </footer>
+
+</div><!-- /dashboardPage --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
